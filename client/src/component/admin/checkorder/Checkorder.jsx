@@ -22,7 +22,7 @@ function Checkorder() {
 
     const updateOrderStatus = async (orderId, status) => {
         try {
-            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/orders/update/${orderId}`, { status });
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/order/orders/update/${orderId}`, { status });
             fetchOrders(); // Refresh orders after update
         } catch (error) {
             console.error('Error updating order status:', error);
