@@ -10,7 +10,7 @@ function Category() {
 
    
         useEffect(() => {
-            axios.get('http://localhost:4000/category/viewcategory')
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/category/viewcategory`)
                 .then((response) => {
                     setCategory(response.data.data);
                 })

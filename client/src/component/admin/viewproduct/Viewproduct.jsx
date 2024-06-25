@@ -28,7 +28,7 @@ export default function Viewproduct() {
     const fetchProducts = async () => {
         try {
 
-            const response = await axios.get('http://localhost:4000/product/viewproduct');
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/product/viewproduct`);
             setProducts(response.data.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -37,7 +37,7 @@ export default function Viewproduct() {
 
 
     useEffect(() => {
-        axios.get('http://localhost:4000/category/viewcategory')
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/category/viewcategory`)
             .then((response) => {
                 setCategory(response.data.data);
             })
@@ -55,7 +55,7 @@ export default function Viewproduct() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.get(`http://localhost:4000/product/delete/${id}`);
+            await axios.get(`${process.env.REACT_APP_BACKEND_URL}/product/delete/${id}`);
             fetchProducts();
         } catch (error) {
             console.error('Error deleting product:', error);
@@ -75,9 +75,9 @@ export default function Viewproduct() {
                 const data = new FormData();
                 data.append('name', file.name);
                 data.append('file', file);
-                await axios.post('http://localhost:4000/image/upload-image', data);
+                await axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data);
             }
-            await axios.post(`http://localhost:4000/product/updateproduct/${editId}`, inputValues);
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/product/updateproduct/${editId}`, inputValues);
             fetchProducts();
         } catch (error) {
             console.error('Error updating product:', error);
@@ -98,7 +98,7 @@ export default function Viewproduct() {
         };
 
         try {
-            const response = await axios.post('http://localhost:4000/cart/addcart', cartItem);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/cart/addcart`, cartItem);
             addToCart(cartItem);
         } catch (error) {
             console.error('Error adding product to cart:', error);

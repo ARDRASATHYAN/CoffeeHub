@@ -70,7 +70,7 @@ const navigate=useNavigate()
     if (Object.keys(formErrors).length == 0 && isSubmit) {
       console.log(input);
 
-      axios.post('http://localhost:4000/register/userreg', input).then((response) => {
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/register/userreg`, input).then((response) => {
 
 
         console.log("res===========>", response.data);

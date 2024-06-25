@@ -17,7 +17,7 @@ const navigate=useNavigate()
         setIsToggled(!isToggled);
     };
     useEffect(() => {
-        axios.get('http://localhost:4000/user/viewuser')
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/viewuser`)
             .then((response) => {
                 setUser(response.data.data);
             })
@@ -26,7 +26,7 @@ const navigate=useNavigate()
             });
     }, []);
     useEffect(()=>{
-    axios.get('http://localhost:4000/product/viewproduct')
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/product/viewproduct`)
                .then((response) => {
                     setProduct(response.data.data);
                 })
@@ -37,7 +37,7 @@ const navigate=useNavigate()
     },[])
 
     useEffect(()=>{
-        axios.get('http://localhost:4000/order/orders')
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/order/orders`)
         .then((response) => {
             setOrder(response.data.data);
         })

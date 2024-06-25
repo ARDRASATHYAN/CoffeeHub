@@ -17,7 +17,7 @@ function Orderconformation() {
                 items: cart,
                 totalPrice,
             };
-            await axios.post('http://localhost:4000/order/orders', orderData);
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/order/orders`, orderData);
             navigate('/thank-you');
         } catch (error) {
             console.error('Error confirming order:', error);

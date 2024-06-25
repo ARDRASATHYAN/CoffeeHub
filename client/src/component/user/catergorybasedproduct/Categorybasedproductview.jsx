@@ -11,7 +11,7 @@ function Categorybasedproductview() {
     useEffect(() => {
        
         
-        axios.get(`http://localhost:4000/category/viewcategory/${id}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/category/viewcategory/${id}`)
             .then((response) => {
                 setProducts(response.data.data || []);
                

@@ -27,7 +27,7 @@ function Searchpage() {
     const fetchResults = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:4000/search/search', {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/search/search`, {
           params: { productName }
         });
         setSearchResults(response.data);
@@ -53,7 +53,7 @@ function Searchpage() {
         };
 
         try {
-            const response = await axios.post('http://localhost:4000/cart/addcart', cartItem);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/cart/addcart`, cartItem);
             addToCart(cartItem);
         } catch (error) {
             console.error('Error adding product to cart:', error);

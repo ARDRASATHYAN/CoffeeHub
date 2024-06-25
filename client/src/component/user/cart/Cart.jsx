@@ -20,7 +20,7 @@ function Cart() {
         newCart[index].quantity += 1;
 
         try {
-            const response = await axios.patch(`http://localhost:4000/cart/cart/${newCart[index].productId}`, { quantity: newCart[index].quantity });
+            const response = await axios.patch(`${process.env.REACT_APP_BACKEND_URL}/cart/cart/${newCart[index].productId}`, { quantity: newCart[index].quantity });
             
             if (response.data) {
                 setCart(newCart);
@@ -38,7 +38,7 @@ function Cart() {
             newCart[index].quantity -= 1;
 
             try {
-                const response = await axios.patch(`http://localhost:4000/cart/cart/${newCart[index].productId}`, { quantity: newCart[index].quantity });
+                const response = await axios.patch(`${process.env.REACT_APP_BACKEND_URL}/cart/cart/${newCart[index].productId}`, { quantity: newCart[index].quantity });
                 if (response.data) {
                     setCart(newCart);
                 } else {
@@ -54,7 +54,7 @@ function Cart() {
         console.log('cartof',id );
         console.log('Removing item with id:', id);
         try {
-            await axios.get(`http://localhost:4000/cart/cart/${id}`);
+            await axios.get(`${process.env.REACT_APP_BACKEND_URL}/cart/cart/${id}`);
             setCart(cart.filter(item => item.productId !== id));
         } catch (error) {
             console.error('Error removing item from cart:', error);

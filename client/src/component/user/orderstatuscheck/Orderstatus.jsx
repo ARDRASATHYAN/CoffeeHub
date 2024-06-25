@@ -14,7 +14,7 @@ console.log('user',userid);
 
     const fetchOrders = async () => {
         try {
-            const response = await axios.get(`http://localhost:4000/order/orders/${userid}`);
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/order/orders/${userid}`);
             setOrders(response.data.data);
         } catch (error) {
             console.error('Error fetching orders:', error);

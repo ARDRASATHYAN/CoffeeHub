@@ -13,7 +13,7 @@ const navigate=useNavigate()
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/product/productone/${id}`);
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/product/productone/${id}`);
                 setProduct(response.data.data);
             } catch (error) {
                 console.error('Error fetching product data:', error);
@@ -33,7 +33,7 @@ const navigate=useNavigate()
         };
 
         try {
-            const response = await axios.post('http://localhost:4000/cart/addcart', cartItem);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/cart/addcart`, cartItem);
             addToCart(cartItem);
             console.log(response); 
            

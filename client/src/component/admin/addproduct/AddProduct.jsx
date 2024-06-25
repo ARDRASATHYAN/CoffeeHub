@@ -27,7 +27,7 @@ function AddProduct() {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:4000/category/viewcategory')
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/category/viewcategory`)
             .then((response) => {
                 setCategory(response.data.data);
             })
@@ -47,9 +47,9 @@ function AddProduct() {
             data.append('name', file.name);
             data.append('file', file);
 
-            axios.post('http://localhost:4000/product/product', input)
+            axios.post(`${process.env.REACT_APP_BACKEND_URL}/product/product`, input)
                 .then((response) => {
-                    return axios.post('http://localhost:4000/image/upload-image', data);
+                    return axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data);
                 })
                 .then((response) => {
                     console.log("res==============>", response.data);
