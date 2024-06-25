@@ -49,7 +49,7 @@ function App() {
           <Route path='/categoryproduct/:id' element={<Categorybasedproductview/>} />
           <Route path='/cart' element={<Cart />} />
           <Route path="/search" element={<Searchpage />} />
-          <Route path="/order-confirmation/:userId" element={<Orderconformation />} /> 
+          <Route path="/order-confirmation/:id" element={<Orderconformation />} /> 
           <Route path="/thank-you" element={<Thankyou />} />
           <Route path="/orderstatus" element={<Orderstatus />} />
         </Routes>
