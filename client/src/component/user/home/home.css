@@ -1,0 +1,26 @@
+.container-flud {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .heading-style {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .heading-style img {
+    height: 50px;
+    vertical-align: middle;
+  }
+  

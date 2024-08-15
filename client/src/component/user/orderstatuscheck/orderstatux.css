@@ -1,0 +1,119 @@
+
+
+/* Container */
+.container {
+    max-width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+/* Main box */
+.main-box {
+    background: #FFFFFF;
+    box-shadow: 1px 1px 2px 0 #CCCCCC;
+    margin-bottom: 16px;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+/* Table */
+.table-responsive {
+    overflow-x: auto;
+}
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+.table th,
+.table td {
+    vertical-align: middle;
+    border-top: 1px solid #e7ebee;
+    padding: 12px 8px;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e7ebee;
+    text-transform: uppercase;
+    font-size: 0.875em;
+}
+.table tbody td:first-child {
+    font-size: 1.125em;
+    font-weight: 300;
+}
+
+/* User info */
+.user-link {
+    display: block;
+    font-size: 1.25em;
+    margin-left: 60px;
+}
+.user-subhead {
+    font-size: 0.875em;
+    font-style: italic;
+}
+.user-list tbody td>img {
+    max-width: 50px;
+    float: left;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+/* Label */
+.label {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+.label-default {
+    background-color: #777;
+    color: #fff;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    outline: none!important;
+}
+a:hover {
+    text-decoration: none;
+    color: #1a6ca7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    .table tbody td {
+        display: block;
+        text-align: right;
+        border-top: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    .table tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+    .user-link {
+        margin-left: 0;
+    }
+    .user-list tbody td>img {
+        margin: 0 auto 10px;
+        float: none;
+        display: block;
+    }
+}
